@@ -1,7 +1,5 @@
 # [ACESSAR SITE](https://guilhermesttt.github.io/The-Last-of-Us/)
 
-======> Espero que goste do meu site Professor Edemilton! ;) <======
-
 Avisos:
 
 1.) A pagina a seguir possui sons interativos, é preciso interagir com o site para que os sons posssam ser executados!
