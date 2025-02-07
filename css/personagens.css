@@ -1,92 +1,107 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.personagens body{
+.personagens body {
     background-color: #eee;
 }
 
-.container{
+.container {
     padding: 25px 9%;
     text-align: center;
 }
 
-.container{
-   font-size: 30px;
-   padding-bottom: 25px;
+.container {
+    font-size: 30px;
+    padding-bottom: 25px;
 }
 
-.container .container-image{
+.container .container-image {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 0px;
 }
 
-@keyframes fadeIn{
-    0%{
-        transform:  scale(.4) translateY(-10px);
+@keyframes fadeIn {
+    0% {
+        transform: scale(.4) translateY(-10px);
         opacity: 0;
     }
 }
 
-.container .container-image .image{
+.container .container-image .image {
     width: 350px;
-    border-radius: 5px;
     border: 2px solid #eee;
     box-shadow: 0 5px 10px rgba(85, 128, 88, 0.1);
     background-color: #c4c4c4;
     padding: 15px;
     transition: transform 0.3s ease-in-out !important;
+    position: relative; /* Para garantir que o pseudo-elemento funcione */
 }
 
 .container .container-image .image:hover {
     transform: scale(1.05);
 }
 
-.container .container-image .image img{
+.container .container-image .image img {
     width: 100%;
     height: 250px;
     object-fit: cover;
     margin-bottom: 20px;
-    border-radius: 5px;
+    filter: sepia(30%) saturate(50%);
 }
 
-@media (max-width:768px){
-    .container .container-image{
-        display: grid;
-        grid-template-columns: repeat(1,1fr);
-        padding: 25px 20px;
-    }
-    .container .container-image .image{
-        width: 100%;
-    }
+/* Efeito de textura envelhecida nos cards */
+.container .container-image .image::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: linear-gradient(
+            265deg, rgba(0, 0, 0, 0.2), transparent 15%
+        ),
+        linear-gradient(5deg, rgba(0, 0, 0, 0.2), transparent 15%),
+        linear-gradient(-5deg, rgba(0, 0, 0, 0.1), transparent 15%),
+        linear-gradient(5deg, rgba(0, 0, 0, 0.1), transparent 15%),
+        linear-gradient(-265deg, rgba(0, 0, 0, 0.2), transparent 15%),
+        linear-gradient(-5deg, rgba(0, 0, 0, 0.2), transparent 15%),
+        linear-gradient(266deg, rgba(0, 0, 0, 0.2), transparent 15%);
+    background-size: 50% 33.3333%;
+    background-position: left top, left top, right top, left center, right center, right center, left bottom;
+    opacity: 0.6;
+    pointer-events: none;
 }
 
-@media(max-width:50px){
-    .container .container-image{
-        display: grid;
-        grid-template-columns: repeat(1,1fr);
-        padding: 25px 20px;
-    } 
-
-    .container .container-image .image{
-        width: 100%;
-    }
-
-}
-.container .container-image .image a{
-font-size:  25px;
-color: #000;
-padding: 10px;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.container .container-image .image a {
+    font-size: 25px;
+    color: #000;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline-block; /* Para garantir que o link seja exibido como bloco */
 }
 
-.container .container-image .image a:hover{
+.container .container-image .image a:hover {
     text-decoration: underline;
     color: #006400;
     transition: .5s;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container .container-image {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 25px 20px;
+    }
+
+    .container .container-image .image {
+        width: 100%;
+    }
 }

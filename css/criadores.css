@@ -1,97 +1,121 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.personagens body{
+.personagens body {
     background-color: #eee;
 }
 
-.criadores{
+.criadores {
     padding: 25px 9%;
     text-align: center;
 }
 
-.criadores{
-   font-size: 30px;
-   padding-bottom: 25px;
+.criadores {
+    font-size: 30px;
+    padding-bottom: 25px;
 }
 
-.criadores .criadores-image{
+.criadores .criadores-image {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 0px;
 }
 
-@keyframes fadeIn{
-    0%{
-        transform:  scale(.4) translateY(-10px);
+@keyframes fadeIn {
+    0% {
+        transform: scale(.4) translateY(-10px);
         opacity: 0;
     }
 }
 
-.criadores .criadores-image .image{
+.criadores .criadores-image .image {
+    position: relative; /* Corrigido para que o pseudo-elemento funcione */
     width: 350px;
-    border-radius: 5px;
-    border: 2px solid #eee;
-    box-shadow: 0 5px 10px rgba(85, 128, 88, 0.1);
-    background-color: #eee;
+    border: 5px solid #d4b998;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
     padding: 15px;
-    transition: transform 0.3s ease-in-out !important;
+    transition: transform 0.3s ease-in-out;
 }
 
-.criadores .criadores-image .image:hover{
+.criadores-image .image h2 {
+    font-size: 24px; 
+    font-weight: bold;
+    color: #333; 
+   margin-top: 5px;
+}
+
+.criadores-image .image h3 {
+    font-size: 18px;
+    font-weight: normal;
+    color: #666; 
+    margin-top: 0;
+    margin-top: 30px; 
+}
+
+
+.criadores .criadores-image .image:hover {
     transform: scale(1.05);
 }
 
-.criadores .criadores-image .image img{
+.criadores .criadores-image .image img {
     width: 100%;
     height: 250px;
     object-fit: cover;
     margin-bottom: 20px;
-    border-radius: 5px;
+    filter: sepia(30%) saturate(50%); /* Correção para o efeito de envelhecimento */
 }
 
-/* .criadores .criadores-image .image img:hover{
-    transform: scale(1.2);
-} */
-
-.criadores .criadores-image .image h2{
-    font-size:  25px;
-    color: #000;
-    padding: 10px;
+/* Efeito de textura envelhecida nos cards */
+.criadores .criadores-image .image::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: linear-gradient(
+            265deg, rgba(0, 0, 0, 0.2), transparent 15%
+        ),
+        linear-gradient(5deg, rgba(0, 0, 0, 0.2), transparent 15%),
+        linear-gradient(-5deg, rgba(0, 0, 0, 0.1), transparent 15%),
+        linear-gradient(5deg, rgba(0, 0, 0, 0.1), transparent 15%),
+        linear-gradient(-265deg, rgba(0, 0, 0, 0.2), transparent 15%),
+        linear-gradient(-5deg, rgba(0, 0, 0, 0.2), transparent 15%),
+        linear-gradient(266deg, rgba(0, 0, 0, 0.2), transparent 15%);
+    background-size: 50% 33.3333%;
+    background-position: left top, left top, right top, left center, right center, right center, left bottom;
+    opacity: 0.6;
+    pointer-events: none;
 }
 
-.criadores .criadores-image .image h3{
-    font-size: 14px;
-    color: #000;
-    padding: 10px;
-}
-
-
-@media (max-width:768px){
-    .criadores .criadores-image{
+/* Responsividade */
+@media (max-width: 768px) {
+    .criadores .criadores-image {
         display: grid;
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
         padding: 25px 20px;
     }
-    .criadores .criadores-image .image{
+
+    .criadores .criadores-image .image {
         width: 100%;
     }
 }
 
-@media(max-width:50px){
-    .criadores .criadores-image{
+@media (max-width: 50px) {
+    .criadores .criadores-image {
         display: grid;
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
         padding: 25px 20px;
-    } 
-
-    .criadores .criadores-image .image{
-        width: 100%;
     }
 
+    .criadores .criadores-image .image {
+        width: 100%;
+    }
 }
