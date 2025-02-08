@@ -1,17 +1,41 @@
-#[ACESSAR SITE https://guilhermesttt.github.io/The-Last-of-Us/]
+# 🎮 The Last of Us Fan Website
 
-Avisos:
+Este é um projeto desenvolvido no meu primeiro período da faculdade de **Sistemas de Informação**, onde criei um site dedicado ao jogo *The Last of Us*. O objetivo foi praticar **HTML, CSS e JavaScript**, além de explorar conceitos de design e usabilidade.
 
-1.) A pagina a seguir possui sons interativos, é preciso interagir com o site para que os sons posssam ser executados!
+## 🔥 Motivação
 
-2.) Ao clicar em qualquer lugar no Home a página irá tocar a música do menu do game The Last of Us e
-o mesmo serve para a pagina História, porém, em vez da música do menu, será tocada a musica tema do game.
+Como fã da franquia *The Last of Us*, decidi criar um site que reunisse informações sobre o jogo, sua história, personagens e impacto na cultura gamer. Este projeto foi uma excelente oportunidade para aplicar os conhecimentos adquiridos no início da minha jornada como desenvolvedor.
 
-3.) Ao passar o mouse em cima das categorias (home, história, personagens, criadores e sobre mim) emite um som de "swipe".
+## ⚡ Tecnologias Utilizadas
 
-4.) Cada página contem suas referências.
+- 🏗️ **HTML5** – Estruturação das páginas
+- 🎨 **CSS3** – Estilização e responsividade
+- 🎮 **JavaScript** – Interatividade com músicas no site
 
-Projeto desenvolvido para a aula de introdução a Tecnologia Web do 1° período de Sistemas de Informação 
-Centro Univeritario do Rio São Francisco - UNIRIOS
+## 🎨 Funcionalidades
 
-Aluno: Guilherme Lima de Sant'ana
+✔ **Seção sobre a história do jogo**, explicando o enredo e principais acontecimentos  
+✔ **Galeria de personagens**, destacando os protagonistas e antagonistas  
+✔ **Player de música**, permitindo ouvir trilhas icônicas do jogo durante a navegação 
+
+## 🛠️ Aprendizados
+
+Durante este projeto, pude praticar:
+
+✅ Estruturação semântica com HTML  
+✅ Estilização avançada com CSS  
+✅ Introdução à interatividade com JavaScript  
+✅ Melhores práticas para design e experiência do usuário  
+
+## 🚀 Próximos Passos
+
+📌 Melhorar a navegação e adicionar animações  
+📌 Incluir uma seção sobre *The Last of Us Part II*  
+📌 Implementar um modo escuro para melhor acessibilidade  
+
+## 🌐 Acesse o Projeto
+
+🔗 <a href="https://guilhermesttt.github.io/The-Last-of-Us/" target="_blank">**Acesse o site aqui**</a>  
+
+Se tiver sugestões ou quiser contribuir, fique à vontade para abrir uma issue ou um pull request! 🎮🔥
+
