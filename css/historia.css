@@ -1,47 +1,182 @@
-*{
-    margin: 0 auto;
+/* historia.css - Estilo para a página de história */
+
+/* Reset e estilos base */
+* {
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-h1{
+/* Variáveis */
+:root {
+    --container-width: 90%;
+    --container-max-width: 1200px;
+    --text-color: var(--text);
+    --border-radius: 10px;
+    --transition: all 0.3s ease;
+}
+
+/* historia.css - Estilos específicos para a página de história */
+
+/* Container principal */
+.historia-container, main {
+    width: var(--container-width);
+    max-width: var(--container-max-width);
+    margin: 40px auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Títulos */
+.historia-container h1, h1, .titulo-2 {
+    font-size: 1.5rem;
+    margin: 40px 0 30px;
+    color: var(--text-color);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.historia-container h1::after, h1::after, .titulo-2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: var(--infected-green);
+    margin: 15px auto;
+}
+
+.titulo-2 {
     margin-top: 80px;
-    font-size: 40px;
-    padding-bottom: 20px;
 }
 
-.imagem-historia{
-    width: 1430px;
-    height: auto;
-    border-radius: 20px;
+/* Conteúdo */
+.historia-content, .protagonistas-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
 }
 
-.container{
-    border-radius: 10px;
-    align-items: center
-    ;
-}
-
-p{
-    padding-top: 10px;
-    font-size: 20px;
-    margin-bottom: 40px;
-}
-
-#texto-2{
-    margin-top: 5%;
-}
-
-section div #imagem2{
+/* Imagens */
+.imagem-historia, #imagem2 {
     width: 100%;
+    max-width: 900px;
     height: auto;
-    border-radius: 20px;
+    border-radius: var(--border-radius);
+    margin: 30px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: var(--transition);
 }
-  
+
+.imagem-historia:hover, #imagem2:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 20px var(--infected-green), 0 0 40px rgba(58, 92, 58, 0.4);
+}
+
+/* Parágrafos */
+.historia-container p, p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 20px auto;
+    max-width: 800px;
+    color: var(--light-gray);
+    text-align: center;
+}
+
+/* Seção de protagonistas */
+.protagonistas-section {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid var(--infected-green);
+}
+
+/* Rodapé */
+.footer-section {
+    background: rgba(10, 12, 16, 0.9);
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    width: 100%;
+}
+
+.footer a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.footer a:hover {
+    color: var(--infected-green);
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .historia-container h1, h1 {
+        font-size: 2.2rem;
+    }
     
+    .historia-container p, p {
+        font-size: 1rem;
+    }
+}
 
+@media (max-width: 768px) {
+    .historia-container, main {
+        margin: 20px auto;
+        padding: 10px;
+    }
+    
+    .historia-container h1, h1 {
+        font-size: 1.8rem;
+        margin: 30px 0 20px;
+    }
+    
+    .imagem-historia, #imagem2 {
+        border-radius: 8px;
+    }
+    
+    .historia-container p, p {
+        text-align: center;
+        padding: 0 10px;
+    }
+    
+    .footer ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
 
-
-
-
-
-
+@media (max-width: 480px) {
+    .historia-container h1, h1 {
+        font-size: 1.6rem;
+    }
+    
+    .historia-container p, p {
+        font-size: 0.95rem;
+    }
+    
+    .titulo-2 {
+        margin-top: 60px;
+        font-size: 1.7rem;
+    }
+}

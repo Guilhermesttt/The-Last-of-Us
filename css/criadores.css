@@ -1,121 +1,181 @@
-* {
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+/* Estilos específicos para a página de criadores */
 
-.personagens body {
-    background-color: #eee;
-}
-
-.criadores {
-    padding: 25px 9%;
+/* Título principal ajustado */
+.criadores-title {
+    font-size: 1.8rem;
+    padding: 20px;
+    margin: 0 auto 20px;
     text-align: center;
-}
-
-.criadores {
-    font-size: 30px;
-    padding-bottom: 25px;
-}
-
-.criadores .criadores-image {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 0px;
-}
-
-@keyframes fadeIn {
-    0% {
-        transform: scale(.4) translateY(-10px);
-        opacity: 0;
-    }
-}
-
-.criadores .criadores-image .image {
-    position: relative; /* Corrigido para que o pseudo-elemento funcione */
-    width: 350px;
-    border: 5px solid #d4b998;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    padding: 15px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.criadores-image .image h2 {
-    font-size: 24px; 
-    font-weight: bold;
-    color: #333; 
-   margin-top: 5px;
-}
-
-.criadores-image .image h3 {
-    font-size: 18px;
-    font-weight: normal;
-    color: #666; 
-    margin-top: 0;
-    margin-top: 30px; 
-}
-
-
-.criadores .criadores-image .image:hover {
-    transform: scale(1.05);
-}
-
-.criadores .criadores-image .image img {
+    position: relative;
+    display: inline-block;
     width: 100%;
-    height: 250px;
-    object-fit: cover;
-    margin-bottom: 20px;
-    filter: sepia(30%) saturate(50%); /* Correção para o efeito de envelhecimento */
-}
-
-/* Efeito de textura envelhecida nos cards */
-.criadores .criadores-image .image::after {
-    content: "";
+  }
+  
+  .criadores-title::after {
+    content: '';
     position: absolute;
-    left: 0;
-    top: 0;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-dark), var(--highlight));
+  }
+  
+  /* Container principal */
+  .criadores-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  /* Grid de criadores */
+  .criadores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
     width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    justify-items: center; /* Centraliza os cards horizontalmente */
+  }
+  
+  /* Cards de criadores */
+  .creator-card {
+    position: relative;
+    background: rgba(10, 12, 16, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
     height: 100%;
-    z-index: 1;
-    background-image: linear-gradient(
-            265deg, rgba(0, 0, 0, 0.2), transparent 15%
-        ),
-        linear-gradient(5deg, rgba(0, 0, 0, 0.2), transparent 15%),
-        linear-gradient(-5deg, rgba(0, 0, 0, 0.1), transparent 15%),
-        linear-gradient(5deg, rgba(0, 0, 0, 0.1), transparent 15%),
-        linear-gradient(-265deg, rgba(0, 0, 0, 0.2), transparent 15%),
-        linear-gradient(-5deg, rgba(0, 0, 0, 0.2), transparent 15%),
-        linear-gradient(266deg, rgba(0, 0, 0, 0.2), transparent 15%);
-    background-size: 50% 33.3333%;
-    background-position: left top, left top, right top, left center, right center, right center, left bottom;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .creator-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .creator-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: all 0.4s ease;
+    filter: grayscale(20%);
+  }
+  
+  .creator-card:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .creator-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: var(--skin);
+    transition: color 0.3s ease;
+  }
+  
+  .creator-card:hover h2 {
+    color: var(--highlight);
+  }
+  
+  .creator-card h3 {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    font-weight: 300;
+    transition: color 0.3s ease;
+  }
+  
+  .creator-card:hover h3 {
+    color: var(--text);
+  }
+  
+  /* Efeitos de borda */
+  .creator-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-dark), var(--highlight));
+    opacity: 0;
+    transition: opacity 0.4s ease, height 0.3s ease;
+  }
+  
+  .creator-card:hover::after {
+    opacity: 1;
+    height: 4px;
+  }
+  
+  .creator-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, 
+      var(--accent-dark), 
+      var(--highlight), 
+      var(--accent-dark));
+    z-index: -1;
+    opacity: 0;
+    border-radius: 12px;
+    transition: opacity 0.5s ease;
+  }
+  
+  .creator-card:hover::before {
     opacity: 0.6;
-    pointer-events: none;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .criadores .criadores-image {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        padding: 25px 20px;
+    animation: borderGlow 3s linear infinite;
+  }
+  
+  @keyframes borderGlow {
+    0% {
+      filter: blur(2px) brightness(0.8);
     }
-
-    .criadores .criadores-image .image {
-        width: 100%;
+    50% {
+      filter: blur(4px) brightness(1);
     }
-}
-
-@media (max-width: 50px) {
-    .criadores .criadores-image {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        padding: 25px 20px;
+    100% {
+      filter: blur(2px) brightness(0.8);
     }
-
-    .criadores .criadores-image .image {
-        width: 100%;
+  }
+  
+  /* Footer compacto */
+  .compact-footer {
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .criadores-title {
+      font-size: 1.5rem;
+      padding: 15px;
     }
-}
+    
+    .criadores-grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+    }
+    
+    .creator-card {
+      max-width: 100%;
+    }
+  }
